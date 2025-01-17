@@ -1,0 +1,5 @@
+Cái file crawl_for_spark là Chiến code để gửi cho hadoop
+Chạy file crawl_data nhé
+input thì lấy từ shopee_product_id_2, ông copy tầm 100 link hoặc 50 link chạy 1 lượt thôi, tại thỉnh thoảng có 1 link lỗi 
+thì nó lỗi hệ thống
+cái shopee_product_id thì là 4k link
