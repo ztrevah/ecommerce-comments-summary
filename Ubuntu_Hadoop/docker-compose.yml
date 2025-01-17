@@ -1,0 +1,52 @@
+# version: "3.9"
+
+services:
+  ubuntu0:
+    build:
+      context: ./Ubuntu
+      dockerfile: Dockerfile
+    container_name: ubuntu0
+    hostname: hadoop-master
+    networks:
+      # - bridge_net
+      macvlan_net:
+        ipv4_address: 192.168.181.240
+    tty: true
+
+  ubuntu1:
+    build:
+      context: ./Ubuntu2
+      dockerfile: Dockerfile
+    container_name: ubuntu1
+    hostname: datanodea
+    networks:
+      # - bridge_net
+      macvlan_net:
+        ipv4_address: 192.168.181.241
+    tty: true
+
+  ubuntu2:
+    build:
+      context: ./Ubuntu2
+      dockerfile: Dockerfile
+    container_name: ubuntu2
+    hostname: datanodeb
+    networks:
+      # - bridge_net
+      macvlan_net:
+        ipv4_address: 192.168.181.242
+    tty: true
+
+networks:
+  macvlan_net:
+    driver: macvlan
+    driver_opts:
+      parent: ens33
+    ipam:
+      config:
+        - subnet: 192.168.181.0/24 # Thay đổi subnet theo hệ thống mạng của bạn
+          gateway: 192.168.181.113
+
+# networks:
+#   bridge_net:
+#     driver: bridge
