@@ -1,0 +1,6 @@
+Cài đặt ollama trên platform/docker:
+docker pull ollama:lastest
+Cài đặt llama3.2:3b (hoặc llama3.2:1b nếu máy yếu):
+ollama serve
+ollama run llama3.2:3b
+Sau khi chạy, truy cập localhost:11434 để kiểm tra
