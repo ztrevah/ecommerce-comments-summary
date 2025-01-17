@@ -1,5 +1,6 @@
 Cài đặt ollama trên platform/docker:
-docker pull ollama:lastest
+docker run -d --gpus=all -v ollama:/root/.ollama -p 11434:11434 --name ollama ollama/ollama
+chạy ollama:
 Cài đặt llama3.2:3b (hoặc llama3.2:1b nếu máy yếu):
 ollama serve
 ollama run llama3.2:3b
